@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowels Checker</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div class="box">
+        <h1>Vowel Checker!</h1>
+        <label>Provide your preferred statements! </label>
+        <br>
+        <input type="text" id="vowelsInput" placeholder="dialogues_/words_/sentences!">
+        <br>
+        <button onclick="countVowels()">Count Vowels!</button>
+        <p id="result"></p>
+    </div>
+   
+  <!-- functionality start -->
+    <script>
+        function countVowels() {
+            let vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+            let count = 0;
+
+            // Get the input value
+            let str = document.getElementById("vowelsInput").value;
+
+            for (let char of str) {
+                if (vowels.includes(char)) {
+                    count++;
+                }
+            }
+
+            // Display the result
+            document.getElementById("result").innerText = "Number of vowels = ||" + count + "||";
+        }
+    </script>
+</body>
+</html>
